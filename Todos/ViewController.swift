@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, AddItemViewControllerDelegate {
     @IBOutlet var tableView: UITableView!
     var items: [String] = []
     
@@ -35,6 +35,27 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableViewCell.textLabel!.text = item
         
         return tableViewCell
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "AddItemViewController"{
+            // Get navigation controller
+            let navigationController = segue.destinationViewController as! UINavigationController
+            var addItemViewController = navigationController.topViewController as! AddItemViewController
+            addItemViewController.delegate = self
+            
+        }
+    }
+    
+    func controller(controller: AddItemViewController, didAddItem: String) {
+        // Add new item to item array
+        self.items.append(didAddItem)
+        
+        // Reload tableview
+        self.tableView.reloadData()
+        
+        // Dimiss AddItemViewController view
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 }
 

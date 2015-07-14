@@ -14,6 +14,7 @@
 		362064FE1B54B576003EEEDD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 362064FC1B54B576003EEEDD /* LaunchScreen.xib */; };
 		3620650A1B54B576003EEEDD /* TodosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362065091B54B576003EEEDD /* TodosTests.swift */; };
 		362065141B54C1CE003EEEDD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 362065131B54C1CE003EEEDD /* Default-568h@2x.png */; };
+		362065161B54C408003EEEDD /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362065151B54C408003EEEDD /* AddItemViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		362065081B54B576003EEEDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		362065091B54B576003EEEDD /* TodosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosTests.swift; sourceTree = "<group>"; };
 		362065131B54C1CE003EEEDD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		362065151B54C408003EEEDD /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			children = (
 				362064F31B54B576003EEEDD /* AppDelegate.swift */,
 				362064F51B54B576003EEEDD /* ViewController.swift */,
+				362065151B54C408003EEEDD /* AddItemViewController.swift */,
 				362064F71B54B576003EEEDD /* Main.storyboard */,
 				362064FA1B54B576003EEEDD /* Images.xcassets */,
 				362064FC1B54B576003EEEDD /* LaunchScreen.xib */,
@@ -218,6 +221,7 @@
 			files = (
 				362064F61B54B576003EEEDD /* ViewController.swift in Sources */,
 				362064F41B54B576003EEEDD /* AppDelegate.swift in Sources */,
+				362065161B54C408003EEEDD /* AddItemViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
