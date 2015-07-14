@@ -57,5 +57,23 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Dimiss AddItemViewController view
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete{
+            let item = self.items[indexPath.row]
+            
+            // Remove at index path for items property
+            self.items.removeAtIndex(indexPath.row)
+            
+            // Remove row in tableview
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Right)
+            
+        }
+        
+    }
 }
 
