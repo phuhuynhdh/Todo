@@ -13,6 +13,7 @@
 		362064FB1B54B576003EEEDD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 362064FA1B54B576003EEEDD /* Images.xcassets */; };
 		362064FE1B54B576003EEEDD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 362064FC1B54B576003EEEDD /* LaunchScreen.xib */; };
 		3620650A1B54B576003EEEDD /* TodosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362065091B54B576003EEEDD /* TodosTests.swift */; };
+		362065141B54C1CE003EEEDD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 362065131B54C1CE003EEEDD /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		362065031B54B576003EEEDD /* TodosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		362065081B54B576003EEEDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		362065091B54B576003EEEDD /* TodosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosTests.swift; sourceTree = "<group>"; };
+		362065131B54C1CE003EEEDD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 		362064E51B54B575003EEEDD = {
 			isa = PBXGroup;
 			children = (
+				362065131B54C1CE003EEEDD /* Default-568h@2x.png */,
 				362064F01B54B576003EEEDD /* Todos */,
 				362065061B54B576003EEEDD /* TodosTests */,
 				362064EF1B54B575003EEEDD /* Products */,
@@ -193,6 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				362064F91B54B576003EEEDD /* Main.storyboard in Resources */,
+				362065141B54C1CE003EEEDD /* Default-568h@2x.png in Resources */,
 				362064FE1B54B576003EEEDD /* LaunchScreen.xib in Resources */,
 				362064FB1B54B576003EEEDD /* Images.xcassets in Resources */,
 			);
