@@ -16,7 +16,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.items = ["Milk", "Meat", "Fish", "Chickend"]
+        // Load state
+        self.loadItems()
+        self.loadCheckItems()
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,6 +65,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         // Dimiss AddItemViewController view
         self.dismissViewControllerAnimated(true, completion: nil)
+        
+        // Save Items
+        self.saveItems()
     }
     
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -79,6 +84,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             // Remove row in tableview
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Right)
             
+            // Save State
+            self.saveItems()
+            self.saveCheckItems()
         }
         
     }
@@ -105,6 +113,42 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             // Append item to checkItems
             self.checkItems.append(item)
         }
+        
+        // Save checkitems
+        self.saveCheckItems()
+    }
+    
+    private func loadItems(){
+        var userDefaults = NSUserDefaults.standardUserDefaults()
+        var storedItems = userDefaults.objectForKey("items") as? [String]
+        
+        if let items = storedItems {
+            self.items = items
+        }
+    }
+    
+    private func loadCheckItems() {
+        var userDefaults = NSUserDefaults.standardUserDefaults()
+        var storedCheckItems = userDefaults.objectForKey("checkItems") as? [String]
+        
+        if let checkItems = storedCheckItems {
+            self.checkItems = checkItems
+        }
+    }
+    
+    private func saveItems() {
+        var userDefaults = NSUserDefaults.standardUserDefaults()
+        userDefaults.setObject(self.items, forKey: "items")
+        
+        userDefaults.synchronize()
+    }
+    
+    private func saveCheckItems() {
+        var userDefaults = NSUserDefaults.standardUserDefaults()
+        userDefaults.setObject(self.checkItems, forKey: "checkItems")
+        
+        userDefaults.synchronize()
+        
     }
 }
 
