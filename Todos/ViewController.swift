@@ -10,7 +10,19 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, AddItemViewControllerDelegate {
     @IBOutlet var tableView: UITableView!
-    var items: [String] = []
+    @IBOutlet var labelView: UILabel?
+    
+    var items: [String] = [] {
+        didSet(oldValue) {
+            if oldValue != items {
+                var hasItem = self.items.count > 0
+                
+                tableView.hidden = !hasItem
+                labelView?.hidden = hasItem
+                
+            }
+        }
+    }
     var checkItems: [String] = []
     
     override func viewDidLoad() {
