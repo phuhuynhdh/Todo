@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, AddItemViewControllerDelegate {
     @IBOutlet var tableView: UITableView!
     var items: [String] = []
+    var checkItems: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let tableViewCell = tableView.dequeueReusableCellWithIdentifier("TableCell", forIndexPath: indexPath) as! UITableViewCell
         
         tableViewCell.textLabel!.text = item
+        
+        if contains( self.checkItems, item){
+            tableViewCell.accessoryType = .Checkmark
+        }else{
+            tableViewCell.accessoryType = .None
+        }
         
         return tableViewCell
     }
@@ -74,6 +81,30 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
         }
         
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        // get selected item
+        let item = self.items[indexPath.row]
+        
+        // get selected cell
+        var tableViewCell = tableView.cellForRowAtIndexPath(indexPath)
+        
+        // Find index of item
+        var index = find(self.checkItems, item)
+        
+        if let index = index {
+            // Remove checkmark
+            tableViewCell?.accessoryType = .None
+            
+            // Remove item in checkItems
+            self.checkItems.removeAtIndex(index)
+        }else{
+            // Add checkmark
+            tableViewCell?.accessoryType = .Checkmark
+            // Append item to checkItems
+            self.checkItems.append(item)
+        }
     }
 }
 
